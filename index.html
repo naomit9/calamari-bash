@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calamari Bash</title>
+
+    <!--STYLESHEET-->
+    <link rel="stylesheet" href="./game.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="home-container">
+        <h1>Calamari Bash</h1>
+        <div class="squid">
+            <div class="legs"></div>
+        </div>
+        <h2>Instruction: </h2>
+            <p>squish the squids, not the bomb!</p>
+            <button class="btn" id="play">Play Game!</button>
+    </div>
+     <!-- BUBBLES -->
+     <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>    
+    </div>
+    <!--CONTAINER FOR SCORE AND TIME-->
+    <div class="main-container">
+        <div class="container">
+            <div class="score">
+                <h3>Your Score: <span id="score">0 </span></h3>
+            </div>
+            <div class="time">
+                <h3> Time Left: <span id="time-left">30</span></h3>
+            </div>
+        </div>
+    
+    
+        <!--START/PAUSE BUTTON-->
+        <div class="startBtn">
+            <button class="btn" id="start">Start Game!</button>
+        </div>
+    
+    
+        <!-- BUBBLES -->
+        <div id="background-wrap">
+            <div class="bubble x1"></div>
+            <div class="bubble x2"></div>
+            <div class="bubble x3"></div>
+            <div class="bubble x4"></div>
+            <div class="bubble x5"></div>
+            <div class="bubble x6"></div>
+            <div class="bubble x7"></div>
+            <div class="bubble x8"></div>
+            <div class="bubble x9"></div>
+            <div class="bubble x10"></div>    
+        </div>
+    
+        <div class="bomb">
+            <img class="bomb-img" src="./images/bomb.svg" alt="bomb">
+        </div>
+    
+        <!--SQUID-->
+        <div class="squid-container">
+            <div class="squid">
+                <div class="legs"></div>
+            </div>
+        </div>
+    </div>
+        
+
+    <!--JAVASCRIPT ATTACHED-->
+    <script src="./app.js"></script>
+
+</body>
+
+</html>

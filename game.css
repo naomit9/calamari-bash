@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* GENERAL PAGE STYLING */
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    cursor: url(./images/mallet.svg), auto;
+
+}
+body{
+    background-image:url(./images/game\ background.png);
+    background-size: cover;
+}
+h3{
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+}
+button{
+    color:white;
+    font-size: 22px;
+    padding: 1rem;
+    font-weight: bold;
+    background-color: #8c52ff;
+    border-radius: 20px;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: 0.2s ease-in-out;
+}
+.main-container {
+    display: none;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 2rem;
+    margin: 1rem;
+}
+.container .score{
+    margin-right: 8rem;
+}
+.startBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/* SQUID ANIMATION */
+.squid-container{
+    display:none; /* Hide the squid initially*/
+    position:absolute;
+    margin:auto;
+    top:50%;
+    transform: translateY(-50%);
+    animation:swim 7s linear infinite, bounce 2s infinite;
+}
+.squid{
+    position: relative;
+    width: 80px;
+    height:80px;
+    background: linear-gradient(#f01c8a, #f53e2f);
+    border-radius: 50%;
+    right: 0; /* squid moves from right to left */
+}
+
+/* BOMB */
+.bomb{
+    display:none;
+    position:absolute;
+    margin:auto;
+    top:50%;
+    z-index: 2;
+}
+img{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    right: 0; 
+    animation:swim 5s linear infinite;
+}
+@keyframes swim{
+    0%{
+        right:0;
+    }
+    25%{
+        right:calc(25% - 40px)
+    }
+    50%{
+        right:calc(50% - 40px);
+    }
+    75%{
+        right:calc(75% - 40px);
+    }
+    100%{
+        right:calc(100% - 80px);
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100%{
+        transform:translateY(0);
+    }
+    40%{
+        transform:translateY(-30px);
+    }
+    60%{
+        transform:translateY(-15px);
+    }
+}
+.squid::before, .squid::after{
+    position:absolute;
+    content:"";
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #000;
+    border: 0.18em solid #fff;
+    border-radius: 50%;
+    top: 1.2em;
+    left: 0.6em;
+    box-shadow: 2.2em 0 0 -0.16em #000, 2.2em 0 #fff;
+    animation: lookLeft 0.5s linear infinite;
+}
+.eyes::after{
+    left:30px;
+    animation: lookRight 0.5s linear infinite;
+}
+
+/* ANIMATION FOR GOOGLY EYES */
+@keyframes lookLeft {
+    0%, 100%{
+        left:5px;
+    }
+    50%{
+        left:10px;
+    }
+}
+@keyframes lookRight {
+    0%, 100%{
+        left:30px;
+    }
+    50%{
+        top:20px;
+        left:35px;
+    }
+}
+.legs{
+    height: 3em;
+    width: 1.25em;
+    background-color: #f53e2f;
+    position:absolute;
+    border-radius: 1em;
+    left: 1.8em;
+    top:4em;
+    z-index:-1;
+}
+.legs::before,
+.legs::after{
+    position:absolute;
+    content:"";
+    height: 3em;
+    width: 1.25em;
+    background-color: #f53e2f;
+    border-radius: 1em;
+    bottom:0;
+}
+.legs::before{
+    transform:rotate(-20deg);
+    left:1em;
+    top:-0.3em;
+}
+.legs::after{
+    transform:rotate(20deg);
+    left:-1em;    
+    top:-0.3em;
+}
+/*  BUBBLES */
+#background-wrap{
+    bottom:0;
+    left:0;
+    position:fixed;
+    right:0;
+    top:0;
+    z-index:-1;
+    overflow: hidden;
+}
+
+.bubble{
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    border-radius: 50%;
+    box-shadow: inset 5px -5px 10px white;
+    background-color: rgba(255,255,255,.01);
+    position: absolute;
+    animation:animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+
+.bubble.x1{
+    left:10%;
+    animation:animateBubble 10.2s linear infinite, sideWays 2.5s ease-in-out infinite alternate;
+}
+.bubble.x2{
+    left:20%;
+    animation:animateBubble 8.3s linear infinite, sideWays 1.3s ease-in-out infinite alternate;
+}
+.bubble.x3{
+    left:270%;
+    animation:animateBubble 9.2s linear infinite, sideWays 1.3s ease-in-out infinite alternate;
+}
+.bubble.x4{
+    left:40%;
+    animation:animateBubble 8.7s linear infinite, sideWays 1.2s ease-in-out infinite alternate;
+}
+.bubble.x5{
+    left:75%;
+    animation:animateBubble 7s linear infinite, sideWays 1.2s ease-in-out infinite alternate;
+}
+.bubble.x6{
+    left:90%;
+    animation:animateBubble 9.5s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.bubble.x7{
+    left:50%;
+    animation:animateBubble 8.8s linear infinite, sideWays 3.1s ease-in-out infinite alternate;
+}
+.bubble.x8{
+    left:65%;
+    animation:animateBubble 7.8s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.bubble.x9{
+    left:3%;
+    animation:animateBubble 8.5s linear infinite, sideWays 1.5s ease-in-out infinite alternate;
+}
+.bubble.x10{
+    left:35%;
+    animation:animateBubble 5s linear infinite, sideWays 2.4s ease-in-out infinite alternate;
+}
+@keyframes animateBubble {
+    0%{
+        margin-top:1000px;
+    }
+    100%{
+        margin-top:-100%;
+    }
+}
+@keyframes sideWays {
+    0%{
+        margin-left:0px;
+    }
+    100%{
+        margin-left: 50px;
+    }
+}
+
+
