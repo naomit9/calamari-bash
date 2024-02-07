@@ -19,4 +19,4 @@ You have 30 seconds to smash as many squids as possible without touching the bom
 * `app.js`
 
 ## Live Preview
-[Click here to Play](http://naomitruong.free.nf/game/index.html)
+[Click here to Play](https://naomit9.github.io/calamari-bash/)

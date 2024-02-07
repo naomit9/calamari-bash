@@ -35,7 +35,7 @@ function countDown() {
 }
 
 function createBombs() {
-    const numBombs = 15;
+    const numBombs = 10;
     
     for (let i = 1; i <= numBombs; i++) {
         const bombContainer = document.createElement("div");
@@ -66,7 +66,7 @@ function createBombs() {
 
 function createSquids() {
     // Set the number of squids in the game
-    const numSquids = 30;
+    const numSquids = 20;
 
     for (let i = 1; i <= numSquids; i++) {
         // Create a new div element for each squid
